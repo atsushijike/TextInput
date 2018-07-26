@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B6E224121095E3900AA2031 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B6E224021095E3900AA2031 /* SnapKit.framework */; };
+		6BCF756421099E730038029A /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCF756321099E730038029A /* FooterView.swift */; };
 		6BE1BAE321072C2500D734D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE1BAE221072C2500D734D0 /* AppDelegate.swift */; };
 		6BE1BAE521072C2500D734D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE1BAE421072C2500D734D0 /* ViewController.swift */; };
-		6BE1BAE821072C2500D734D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BE1BAE621072C2500D734D0 /* Main.storyboard */; };
 		6BE1BAEA21072C2900D734D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BE1BAE921072C2900D734D0 /* Assets.xcassets */; };
 		6BE1BAED21072C2900D734D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BE1BAEB21072C2900D734D0 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B6E224021095E3900AA2031 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		6BCF756321099E730038029A /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		6BE1BADF21072C2500D734D0 /* TextInput.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextInput.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE1BAE221072C2500D734D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BE1BAE421072C2500D734D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6BE1BAE721072C2500D734D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6BE1BAE921072C2900D734D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BE1BAEC21072C2900D734D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BE1BAEE21072C2900D734D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -29,17 +31,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B6E224121095E3900AA2031 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B6E223F21095E3800AA2031 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B6E224021095E3900AA2031 /* SnapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6BE1BAD621072C2500D734D0 = {
 			isa = PBXGroup;
 			children = (
 				6BE1BAE121072C2500D734D0 /* TextInput */,
 				6BE1BAE021072C2500D734D0 /* Products */,
+				6B6E223F21095E3800AA2031 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,7 +68,7 @@
 			children = (
 				6BE1BAE221072C2500D734D0 /* AppDelegate.swift */,
 				6BE1BAE421072C2500D734D0 /* ViewController.swift */,
-				6BE1BAE621072C2500D734D0 /* Main.storyboard */,
+				6BCF756321099E730038029A /* FooterView.swift */,
 				6BE1BAE921072C2900D734D0 /* Assets.xcassets */,
 				6BE1BAEB21072C2900D734D0 /* LaunchScreen.storyboard */,
 				6BE1BAEE21072C2900D734D0 /* Info.plist */,
@@ -74,6 +86,7 @@
 				6BE1BADB21072C2500D734D0 /* Sources */,
 				6BE1BADC21072C2500D734D0 /* Frameworks */,
 				6BE1BADD21072C2500D734D0 /* Resources */,
+				6B6E224221095F7600AA2031 /* Run Carthage Script */,
 			);
 			buildRules = (
 			);
@@ -124,17 +137,35 @@
 			files = (
 				6BE1BAED21072C2900D734D0 /* LaunchScreen.storyboard in Resources */,
 				6BE1BAEA21072C2900D734D0 /* Assets.xcassets in Resources */,
-				6BE1BAE821072C2500D734D0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6B6E224221095F7600AA2031 /* Run Carthage Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+			);
+			name = "Run Carthage Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6BE1BADB21072C2500D734D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BCF756421099E730038029A /* FooterView.swift in Sources */,
 				6BE1BAE521072C2500D734D0 /* ViewController.swift in Sources */,
 				6BE1BAE321072C2500D734D0 /* AppDelegate.swift in Sources */,
 			);
@@ -143,14 +174,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6BE1BAE621072C2500D734D0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6BE1BAE721072C2500D734D0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6BE1BAEB21072C2900D734D0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -281,6 +304,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TextInput/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,6 +325,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TextInput/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
