@@ -59,7 +59,11 @@ class FooterView: UIView, UITextViewDelegate {
 
 class MessageTextView: UITextView {
     lazy var placeholderLabel = UILabel()
-    var placeholder = ""
+    var placeholder = "" {
+        didSet {
+            placeholderLabel.text = placeholder
+        }
+    }
     
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
@@ -67,9 +71,10 @@ class MessageTextView: UITextView {
         placeholderLabel.textColor = .lightGray
         placeholderLabel.numberOfLines = 0
         addSubview(placeholderLabel)
-        
+
         placeholderLabel.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            make.top.equalTo(textContainerInset)
+            make.left.right.equalTo(textContainerInset)
         }
     }
     
@@ -82,6 +87,6 @@ class MessageTextView: UITextView {
     }
     
     @objc func textViewTextDidChange(notification: Notification) {
-        placeholderLabel.isHidden = text.isEmpty
+        placeholderLabel.isHidden = !text.isEmpty
     }
 }
