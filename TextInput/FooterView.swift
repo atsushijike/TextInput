@@ -24,7 +24,6 @@ class FooterView: UIView {
         
         textView.snp.makeConstraints { (make) in
             make.width.equalToSuperview()
-            make.height.lessThanOrEqualTo(160).priority(UILayoutPriority.defaultHigh.rawValue)
             make.top.equalToSuperview()
         }
         sendButton.snp.makeConstraints { (make) in
@@ -48,6 +47,7 @@ class FooterView: UIView {
 }
 
 class MessageTextView: UITextView {
+    private let maximumHeight: CGFloat = 160
     lazy private var placeholderLabel: UILabel = {
         let label = UILabel()
         label.textColor = .lightGray
@@ -60,6 +60,9 @@ class MessageTextView: UITextView {
         set {
             placeholderLabel.text = newValue
         }
+    }
+    var estimatedContentSize: CGSize {
+        return sizeThatFits(CGSize(width: frame.width, height: CGFloat.greatestFiniteMagnitude))
     }
     
     override init(frame: CGRect, textContainer: NSTextContainer?) {
@@ -81,11 +84,13 @@ class MessageTextView: UITextView {
     }
 
     override var intrinsicContentSize: CGSize {
-        return sizeThatFits(CGSize(width: frame.width, height: CGFloat.greatestFiniteMagnitude))
+        let size = estimatedContentSize
+        return CGSize(width: size.width, height: min(size.height, maximumHeight))
     }
     
     @objc func textViewTextDidChange(notification: Notification) {
         placeholderLabel.isHidden = !text.isEmpty
         invalidateIntrinsicContentSize()
+        isScrollEnabled = estimatedContentSize.height > maximumHeight
     }
 }
