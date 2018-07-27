@@ -48,10 +48,11 @@ class ViewController: UIViewController {
 
     private func setBottomInset(_ inset: CGFloat, duration: TimeInterval = 0) {
         bottomInset = inset
+        view.layoutIfNeeded()
+        footerView.snp.updateConstraints({ (make) in
+            make.bottom.equalToSuperview().inset(bottomInset)
+        })
         UIView.animate(withDuration: duration, animations: {
-            self.footerView.snp.updateConstraints({ (make) in
-                make.bottom.equalToSuperview().inset(self.bottomInset)
-            })
             self.view.layoutIfNeeded()
         })
     }
